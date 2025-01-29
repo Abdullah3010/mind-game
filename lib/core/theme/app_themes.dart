@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mind_game/core/assets/fonts.gen.dart';
 
 class AppThemes {
@@ -6,6 +7,7 @@ class AppThemes {
         fontFamily: FontFamily.cairo,
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
+        scaffoldBackgroundColor: Colors.transparent,
         // primaryColor: CSTApp.navKey.currentContext?.themeMS.colorScheme.blue18,
         // iconTheme: IconThemeData(color: CSTApp.navKey.currentContext?.themeMS.colorScheme.blue18),
         // appBarTheme: AppBarTheme(
@@ -76,40 +78,41 @@ class AppThemes {
         //     color: CSTApp.navKey.currentContext?.themeMS.colorScheme.black,
         //   ),
         // ),
-        // // Todo: enable with forms
-        // inputDecorationTheme: InputDecorationTheme(
-        //   fillColor: CSTApp.navKey.currentContext?.themeMS.colorScheme.white,
-        //   contentPadding: EdgeInsets.symmetric(horizontal: 10.wMS),
-        //   hintStyle: TextStyle(
-        //     color: CSTApp.navKey.currentContext?.themeMS.colorScheme.blue2,
-        //     fontSize: 14.sp,
-        //     fontWeight: FontWeight.w400,
-        //     height: 1.1,
-        //   ),
-        //   border: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: CSTApp.navKey.currentContext?.themeMS.colorScheme.grey),
-        //   ),
-        //   focusedBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: CSTApp.navKey.currentContext?.themeMS.colorScheme.grey),
-        //   ),
-        //   enabledBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: CSTApp.navKey.currentContext?.themeMS.colorScheme.grey),
-        //   ),
-        //   disabledBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: CSTApp.navKey.currentContext?.themeMS.colorScheme.grey),
-        //   ),
-        //   focusedErrorBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: context.themeMS.colorScheme.red11, width: 1.5),
-        //   ),
-        //   errorBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(12.rMS),
-        //     borderSide: BorderSide(color: context.themeMS.colorScheme.red11, width: 1),
-        //   ),
-        // ),
+        // // Todo: enable with for
+        inputDecorationTheme: InputDecorationTheme(
+          fillColor: Colors.white,
+          filled: true,
+          contentPadding: const EdgeInsets.symmetric(horizontal: 10),
+          hintStyle: TextStyle(
+            color: const Color(0xFF939598),
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w800,
+            height: 1.1,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFF280A82)),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFF280A82)),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFF280A82)),
+          ),
+          disabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFF280A82)),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFFFF0000), width: 1.5),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.r),
+            borderSide: const BorderSide(color: Color(0xFFFF0000), width: 1),
+          ),
+        ),
       );
 }

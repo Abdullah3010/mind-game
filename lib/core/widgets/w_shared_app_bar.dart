@@ -37,7 +37,7 @@ class WSharedAppBar extends StatelessWidget {
         else if (leading == null && title != null)
           Text(
             title ?? '',
-            style: context.textTheme.navyBlue16w900,
+            style: context.textTheme.white25w800,
           ),
         const Spacer(),
       ],

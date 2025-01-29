@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/config/params/params_custom_input.dart';
 import 'package:mind_game/core/widgets/forms/base_form_field.dart';
+import 'package:mind_game/core/widgets/forms/w_input_prefix_icon.dart';
 import 'package:mind_game/core/widgets/forms/w_shared_field.dart';
 
 class WPasswordField extends BaseFormField {
@@ -44,6 +45,10 @@ class WPasswordField extends BaseFormField {
               ),
             ),
           ),
+          prefixIcon: param?.prefixIcon ??
+              WInputPrefixIcon(
+                icon: Assets.icons.passwordIcon.path,
+              ),
         );
       },
     );

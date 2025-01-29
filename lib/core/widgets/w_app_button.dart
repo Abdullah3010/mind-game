@@ -16,6 +16,7 @@ class WAppButton extends StatefulWidget {
     this.height,
     this.style,
     this.padding,
+    this.radius,
     this.borderColor,
   });
 
@@ -25,6 +26,7 @@ class WAppButton extends StatefulWidget {
   final Function() onTap;
   final double? width;
   final double? height;
+  final double? radius;
   final TextStyle? style;
   final EdgeInsetsGeometry? padding;
   final Color? borderColor;
@@ -41,26 +43,26 @@ class _WAppButtonState extends State<WAppButton> {
     return InkWell(
       onTap: (!isLoading && !widget.isDisabled) ? onTap : null,
       child: Container(
-        width: widget.width ?? 230.w,
-        height: widget.height ?? 48.h,
+        width: widget.width ?? 188.w,
+        height: widget.height ?? 44.h,
         padding: widget.padding ??
             EdgeInsets.symmetric(
-              horizontal: 15.w,
+              horizontal: 26.w,
               vertical: 8.h,
             ),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(2.r),
+          borderRadius: BorderRadius.circular(widget.radius ?? 36.r),
           color: widget.isFilled
-              ? (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.lightGery)
-              : Colors.transparent,
+              ? (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.grey)
+              : (!(widget.isDisabled)
+                  ? context.theme.colorScheme.white
+                  : context.theme.colorScheme.grey.withValues(alpha: 0.7)),
           border: !widget.isFilled
               ? Border.all(
                   color: widget.borderColor ??
-                      (!(widget.isDisabled)
-                          ? context.theme.colorScheme.buttonColor
-                          : context.theme.colorScheme.lightGery),
+                      (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.grey),
                   width: 1.w,
-                  strokeAlign: 1.0,
+                  strokeAlign: BorderSide.strokeAlignCenter,
                 )
               : null,
         ),
@@ -73,7 +75,7 @@ class _WAppButtonState extends State<WAppButton> {
                   widget.title,
                   textAlign: TextAlign.center,
                   style: widget.style ??
-                      context.textTheme.orange14w600.copyWith(
+                      context.textTheme.button.copyWith(
                         color: widget.isFilled
                             ? (!(widget.isDisabled)
                                 ? context.theme.colorScheme.white

@@ -157,7 +157,7 @@ class _CInputCountryCodePrefixState extends State<CInputCountryCodePrefix> {
         ),
         child: Text(
           country.name,
-          style: Theme.of(context).textTheme.grey16w400,
+          style: Theme.of(context).textTheme.white25w800,
         ),
       ),
     );
@@ -181,7 +181,7 @@ class _CInputCountryCodePrefixState extends State<CInputCountryCodePrefix> {
                 width: 35.w,
                 child: Text(
                   currentCountryPrefix,
-                  style: context.textTheme.grey16w400,
+                  style: context.textTheme.white25w800,
                 ),
               ),
               Icon(

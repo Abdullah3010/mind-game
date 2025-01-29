@@ -79,7 +79,7 @@ class WAppBottomSheet extends StatelessWidget {
               children: [
                 Text(
                   titleText ?? '',
-                  style: context.textTheme.navyBlue24w700,
+                  style: context.textTheme.white25w800,
                 ),
               ],
             ),

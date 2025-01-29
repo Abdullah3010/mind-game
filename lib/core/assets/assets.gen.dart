@@ -105,6 +105,9 @@ class $AssetsIconsGen {
   SvgGenImage get cuidaNotificationBellTimerOutline => const SvgGenImage(
       'assets/icons/cuida_notification-bell-timer-outline.svg');
 
+  /// File path: assets/icons/email icon.svg
+  SvgGenImage get emailIcon => const SvgGenImage('assets/icons/email icon.svg');
+
   /// File path: assets/icons/emojione-v1_racing-car.svg
   SvgGenImage get emojioneV1RacingCar =>
       const SvgGenImage('assets/icons/emojione-v1_racing-car.svg');
@@ -176,6 +179,7 @@ class $AssetsIconsGen {
         vector,
         cele1,
         cuidaNotificationBellTimerOutline,
+        emailIcon,
         emojioneV1RacingCar,
         eyeIcon,
         fluentEmojiFlatWatch,
