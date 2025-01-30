@@ -3,13 +3,9 @@ import 'package:mind_game/core/widgets/forms/w_email_field.dart';
 import 'package:mind_game/core/widgets/forms/w_password_field.dart';
 
 class FLogin extends BaseFormController {
-  WEmailField email = WEmailField(
-    hint: 'Email',
-  );
+  late WEmailField email;
 
-  WPasswordField password = WPasswordField(
-    hint: 'Password',
-  );
+  late WPasswordField password;
   @override
   void init() {
     email = WEmailField(
@@ -27,7 +23,7 @@ class FLogin extends BaseFormController {
 
   @override
   void clear() {
-    email.controller.clear();
-    password.controller.clear();
+    email.clear();
+    password.clear();
   }
 }

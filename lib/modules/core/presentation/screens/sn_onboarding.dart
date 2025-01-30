@@ -1,18 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/extension/build_context.dart';
 import 'package:mind_game/core/extension/color_extension.dart';
 import 'package:mind_game/core/extension/num_ext.dart';
-import 'package:mind_game/core/extension/string_extensions.dart';
 import 'package:mind_game/core/extension/text_theme_extension.dart';
-import 'package:mind_game/core/services/forms/f_login.dart';
-import 'package:mind_game/core/services/routes/routes_names.dart';
-import 'package:mind_game/core/widgets/w_app_button.dart';
 import 'package:mind_game/core/widgets/w_shared_scaffold.dart';
 
 class SNOnboarding extends StatefulWidget {
