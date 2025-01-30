@@ -24,6 +24,10 @@ dependencies:
   circle_nav_bar: ^2.2.0
 
 
+  ###### ================ DATA ================= ######
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0 
+
   ###### ================ UTILS ================= ######
   localize_and_translate: ^6.0.7
   provider: ^6.1.2

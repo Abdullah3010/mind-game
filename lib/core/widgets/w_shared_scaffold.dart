@@ -1,5 +1,6 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/extension/build_context.dart';
@@ -71,7 +72,18 @@ class _WSharedScaffoldState extends State<WSharedScaffold> {
               bottom: widget.withSafeArea,
               right: widget.withSafeArea,
               left: widget.withSafeArea,
-              child: widget.body,
+              child: Stack(
+                children: [
+                  Positioned(
+                    bottom: 88.h,
+                    child: SvgPicture.asset(
+                      Assets.icons.scaffoldBg.path,
+                      width: context.width,
+                    ),
+                  ),
+                  widget.body,
+                ],
+              ),
             ),
           ),
           bottomSheet: widget.bottomSheet,
