@@ -18,6 +18,7 @@ class WAppButton extends StatefulWidget {
     this.padding,
     this.radius,
     this.borderColor,
+    this.textDirection,
   });
 
   final String title;
@@ -30,6 +31,7 @@ class WAppButton extends StatefulWidget {
   final TextStyle? style;
   final EdgeInsetsGeometry? padding;
   final Color? borderColor;
+  final TextDirection? textDirection;
 
   @override
   State<WAppButton> createState() => _WAppButtonState();
@@ -71,19 +73,22 @@ class _WAppButtonState extends State<WAppButton> {
                 color: context.theme.colorScheme.white,
               )
             : Center(
-                child: Text(
-                  widget.title,
-                  textAlign: TextAlign.center,
-                  style: widget.style ??
-                      context.textTheme.button.copyWith(
-                        color: widget.isFilled
-                            ? (!(widget.isDisabled)
-                                ? context.theme.colorScheme.white
-                                : context.theme.colorScheme.lightGery)
-                            : (!(widget.isDisabled)
-                                ? context.theme.colorScheme.buttonColor
-                                : context.theme.colorScheme.lightGery),
-                      ),
+                child: Directionality(
+                  textDirection: widget.textDirection ?? TextDirection.ltr,
+                  child: Text(
+                    widget.title,
+                    textAlign: TextAlign.center,
+                    style: widget.style ??
+                        context.textTheme.button.copyWith(
+                          color: widget.isFilled
+                              ? (!(widget.isDisabled)
+                                  ? context.theme.colorScheme.white
+                                  : context.theme.colorScheme.lightGery)
+                              : (!(widget.isDisabled)
+                                  ? context.theme.colorScheme.buttonColor
+                                  : context.theme.colorScheme.lightGery),
+                        ),
+                  ),
                 ),
               ),
       ),

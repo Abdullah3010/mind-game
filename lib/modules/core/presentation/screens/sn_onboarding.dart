@@ -8,6 +8,7 @@ import 'package:mind_game/core/extension/color_extension.dart';
 import 'package:mind_game/core/extension/num_ext.dart';
 import 'package:mind_game/core/extension/text_theme_extension.dart';
 import 'package:mind_game/core/services/routes/routes_names.dart';
+import 'package:mind_game/core/widgets/w_shared_container.dart';
 import 'package:mind_game/core/widgets/w_shared_scaffold.dart';
 
 class SNOnboarding extends StatefulWidget {
@@ -45,96 +46,83 @@ class _SNOnboardingState extends State<SNOnboarding> {
               ),
             ),
             20.heightBox,
-            SizedBox(
-              height: 320.h,
-              child: Stack(
-                children: [
-                  Container(
-                    width: 372.w,
-                    height: 294.h,
-                    padding: EdgeInsets.all(25.w),
-                    decoration: BoxDecoration(
+            WSharedContainer(
+              childWidth: 372.w,
+              childHeight: 294.h,
+              buttonHeight: 80.h,
+              button: InkWell(
+                onTap: () {
+                  if (currentIndex == subTitles.length - 1) {
+                    Modular.to.navigate(RoutesNames.auth.login);
+                    return;
+                  }
+                  setState(() {
+                    currentIndex++;
+                  });
+                },
+                child: Container(
+                  width: 80.w,
+                  height: 80.h,
+                  decoration: BoxDecoration(
+                    color: context.theme.colorScheme.skyBlue,
+                    borderRadius: BorderRadius.circular(36.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: context.theme.colorScheme.skyBlue.withValues(alpha: 0.6),
+                        offset: const Offset(0, 4),
+                        blurRadius: 15,
+                        spreadRadius: 3,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.arrow_back,
                       color: context.theme.colorScheme.white,
-                      borderRadius: BorderRadius.circular(40.r),
-                    ),
-                    child: Column(
-                      children: [
-                        20.heightBox,
-                        Text(
-                          'أسألة شيقة بإنتظارك',
-                          style: context.textTheme.blue18w700,
-                        ),
-                        12.heightBox,
-                        SizedBox(
-                          height: 50.h,
-                          child: Text(
-                            subTitles[currentIndex % subTitles.length],
-                            style: context.textTheme.grey14w500,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        48.heightBox,
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                            subTitles.length,
-                            (index) => Container(
-                              width: 28.w,
-                              height: 8.h,
-                              margin: EdgeInsets.symmetric(horizontal: 5.w),
-                              decoration: BoxDecoration(
-                                color: currentIndex % subTitles.length == index
-                                    ? context.theme.colorScheme.skyBlue
-                                    : context.theme.colorScheme.midGery,
-                                borderRadius: BorderRadius.circular(50.r),
-                              ),
-                            ),
-                          ),
-                        ),
-                        20.heightBox,
-                      ],
+                      size: 35.sp,
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: InkWell(
-                      onTap: () {
-                        if (currentIndex == subTitles.length - 1) {
-                          Modular.to.navigate(RoutesNames.auth.login);
-                          return;
-                        }
-                        setState(() {
-                          currentIndex++;
-                        });
-                      },
-                      child: Container(
-                        width: 80.w,
-                        height: 80.h,
+                ),
+              ),
+              fullHeight: 320.h,
+              child: Column(
+                children: [
+                  20.heightBox,
+                  Text(
+                    'أسألة شيقة بإنتظارك',
+                    style: context.textTheme.blue18w700,
+                  ),
+                  12.heightBox,
+                  SizedBox(
+                    height: 50.h,
+                    child: Text(
+                      subTitles[currentIndex % subTitles.length],
+                      style: context.textTheme.grey14w500,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  48.heightBox,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      subTitles.length,
+                          (index) => Container(
+                        width: 28.w,
+                        height: 8.h,
+                        margin: EdgeInsets.symmetric(horizontal: 5.w),
                         decoration: BoxDecoration(
-                          color: context.theme.colorScheme.skyBlue,
-                          borderRadius: BorderRadius.circular(36.r),
-                          boxShadow: [
-                            BoxShadow(
-                              color: context.theme.colorScheme.skyBlue.withValues(alpha: 0.6),
-                              offset: const Offset(0, 4),
-                              blurRadius: 15,
-                              spreadRadius: 3,
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: Icon(
-                            Icons.arrow_back,
-                            color: context.theme.colorScheme.white,
-                            size: 35.sp,
-                          ),
+                          color: currentIndex % subTitles.length == index
+                              ? context.theme.colorScheme.skyBlue
+                              : context.theme.colorScheme.midGery,
+                          borderRadius: BorderRadius.circular(50.r),
                         ),
                       ),
                     ),
                   ),
+                  40.heightBox,
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

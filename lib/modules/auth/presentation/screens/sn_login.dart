@@ -86,6 +86,7 @@ class _SNLoginState extends State<SNLogin> {
                   title: 'Login',
                   onTap: () async {
                     manager.login();
+                    Modular.to.navigate(RoutesNames.home.homeMain);
                   },
                 ),
                 25.heightBox,

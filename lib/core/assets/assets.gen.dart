@@ -119,6 +119,9 @@ class $AssetsIconsGen {
   SvgGenImage get fluentEmojiFlatWatch =>
       const SvgGenImage('assets/icons/fluent-emoji-flat_watch.svg');
 
+  /// File path: assets/icons/home_1.svg
+  SvgGenImage get home1 => const SvgGenImage('assets/icons/home_1.svg');
+
   /// File path: assets/icons/ic_round-plus.svg
   SvgGenImage get icRoundPlus =>
       const SvgGenImage('assets/icons/ic_round-plus.svg');
@@ -154,6 +157,10 @@ class $AssetsIconsGen {
   SvgGenImage get solarCupStarBold =>
       const SvgGenImage('assets/icons/solar_cup-star-bold.svg');
 
+  /// File path: assets/icons/vaadin_timer.svg
+  SvgGenImage get vaadinTimer =>
+      const SvgGenImage('assets/icons/vaadin_timer.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         a1,
@@ -187,6 +194,7 @@ class $AssetsIconsGen {
         emojioneV1RacingCar,
         eyeIcon,
         fluentEmojiFlatWatch,
+        home1,
         icRoundPlus,
         materialSymbolsPauseRounded,
         mingcuteExitLine,
@@ -195,7 +203,8 @@ class $AssetsIconsGen {
         passwordIcon,
         pngtreeCelebrationEmojiPngImage88914271,
         scaffoldBg,
-        solarCupStarBold
+        solarCupStarBold,
+        vaadinTimer
       ];
 }
 
