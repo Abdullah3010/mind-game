@@ -13,4 +13,5 @@ extension ColorExtension on ColorScheme {
   Color get scaffoldBackgroundColor => const Color(0xFF875EFE);
   Color get buttonColor => const Color(0xFF35CDE2);
   Color get transparent => Colors.transparent;
+  Color get selectBackground => const Color(0xFFF5F5F5);
 }

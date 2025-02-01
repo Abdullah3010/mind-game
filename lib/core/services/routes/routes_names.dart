@@ -26,4 +26,5 @@ class HomeRoutes {
   static String get baseUrl => RoutesNames.baseUrl;
 
   String get homeMain => '${baseUrl}home';
+  String get subscriptions => '${baseUrl}subscriptions';
 }

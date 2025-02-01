@@ -4,6 +4,8 @@ import 'package:mind_game/modules/auth/presentation/screens/sn_login.dart';
 import 'package:mind_game/modules/auth/presentation/screens/sn_register.dart';
 import 'package:mind_game/modules/core/presentation/screens/sn_onboarding.dart';
 import 'package:mind_game/modules/core/presentation/screens/sn_splash.dart';
+import 'package:mind_game/modules/home/presentation/screens/sn_home.dart';
+import 'package:mind_game/modules/home/presentation/screens/sn_subscription.dart';
 
 /// [Routes] is a class that contains all the routes in the app.
 class Routes {
@@ -32,6 +34,19 @@ class Routes {
       RoutesNames.auth.register,
       transition: TransitionType.fadeIn,
       child: (_) => const SNRegister(),
+    );
+
+    /// ================= HOME ================= ///
+    r.child(
+      RoutesNames.home.homeMain,
+      transition: TransitionType.fadeIn,
+      child: (_) => const SNHome(),
+    );
+
+    r.child(
+      RoutesNames.home.subscriptions,
+      transition: TransitionType.fadeIn,
+      child: (_) => SNSubscription(),
     );
   }
 }
