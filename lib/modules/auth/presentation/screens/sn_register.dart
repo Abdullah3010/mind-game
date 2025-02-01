@@ -33,6 +33,7 @@ class _SNRegisterState extends State<SNRegister> {
   @override
   Widget build(BuildContext context) {
     return WSharedScaffold(
+      withBackground: true,
       appBar: const WSharedAppBar(
         title: 'Register',
       ),

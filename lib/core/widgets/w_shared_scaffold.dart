@@ -14,6 +14,7 @@ class WSharedScaffold extends StatefulWidget {
     this.bottomSheet,
     this.withSafeArea = true,
     this.isLoading = false,
+    this.withBackground = false,
     this.withNavBar = false,
     super.key,
   });
@@ -23,6 +24,7 @@ class WSharedScaffold extends StatefulWidget {
   final bool? resizeToAvoidBottomInset;
   final bool? isLoading;
   final bool? withNavBar;
+  final bool? withBackground;
   final Widget? appBar;
   final Widget? bottomSheet;
 
@@ -74,13 +76,14 @@ class _WSharedScaffoldState extends State<WSharedScaffold> {
               left: widget.withSafeArea,
               child: Stack(
                 children: [
-                  Positioned(
-                    bottom: 88.h,
-                    child: SvgPicture.asset(
-                      Assets.icons.scaffoldBg.path,
-                      width: context.width,
+                  if (widget.withBackground ?? false)
+                    Positioned(
+                      bottom: 88.h,
+                      child: SvgPicture.asset(
+                        Assets.icons.scaffoldBg.path,
+                        width: context.width,
+                      ),
                     ),
-                  ),
                   widget.body,
                 ],
               ),

@@ -24,6 +24,12 @@ extension TextStyleExtension on TextTheme {
         color: const Color(0xFF280A82),
       );
 
+  TextStyle get blue16w500 => TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: 16.sp,
+        color: const Color(0xFF280A82),
+      );
+
   /// [White]
   TextStyle get white25w800 => TextStyle(
         fontWeight: FontWeight.w800,

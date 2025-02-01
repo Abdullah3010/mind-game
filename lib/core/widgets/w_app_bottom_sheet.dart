@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/extension/build_context.dart';
 import 'package:mind_game/core/extension/color_extension.dart';
+import 'package:mind_game/core/extension/num_ext.dart';
 import 'package:mind_game/core/extension/text_theme_extension.dart';
 import 'package:mind_game/core/widgets/w_app_button.dart';
 
@@ -15,6 +16,7 @@ class WAppBottomSheet extends StatelessWidget {
     required this.onMainAction,
     this.titleText,
     this.titleWidget,
+    this.withCancel = false,
     required this.child,
   });
 
@@ -22,12 +24,16 @@ class WAppBottomSheet extends StatelessWidget {
   final String mainActionTitle;
   final void Function() onMainAction;
 
+  final bool? withCancel;
   final String? titleText;
   final Widget? titleWidget;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(
+        horizontal: 10.w,
+      ),
       padding: EdgeInsets.only(
         left: 16.w,
         right: 16.w,
@@ -35,25 +41,15 @@ class WAppBottomSheet extends StatelessWidget {
         bottom: MediaQuery.of(context).viewPadding.bottom,
       ),
       decoration: BoxDecoration(
-        color: context.theme.colorScheme.scaffoldBackgroundColor,
+        color: context.theme.colorScheme.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16.r),
-          topRight: Radius.circular(16.r),
+          topLeft: Radius.circular(40.r),
+          topRight: Radius.circular(40.r),
         ),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Center(
-            child: Container(
-              width: 55.w,
-              height: 4.h,
-              decoration: BoxDecoration(
-                color: context.theme.colorScheme.white,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-            ),
-          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -70,42 +66,50 @@ class WAppBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
+              if (titleWidget != null) titleWidget ?? const SizedBox(),
+              if (titleText != null && titleWidget == null && titleText?.isEmpty == false)
+                Expanded(
+                  child: Text(
+                    titleText ?? '',
+                    style: context.textTheme.blue16w500,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              40.widthBox,
             ],
           ),
-          if (titleWidget != null) titleWidget ?? const SizedBox(),
-          if (titleText != null && titleWidget == null && titleText?.isEmpty == false)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  titleText ?? '',
-                  style: context.textTheme.white25w800,
-                ),
-              ],
-            ),
           30.verticalSpace,
           child,
           20.verticalSpace,
           Row(
-            children: [
-              Expanded(
-                child: WAppButton(
-                  title: mainActionTitle,
-                  onTap: onMainAction,
-                ),
-              ),
-              60.horizontalSpace,
-              Expanded(
-                child: WAppButton(
-                  title: 'Cancel',
-                  isFilled: false,
-                  onTap: () {
-                    Modular.to.pop();
-                  },
-                ),
-              )
-            ],
-          )
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: (withCancel ?? false)
+                ? [
+                    Expanded(
+                      child: WAppButton(
+                        title: mainActionTitle,
+                        onTap: onMainAction,
+                      ),
+                    ),
+                    60.horizontalSpace,
+                    Expanded(
+                      child: WAppButton(
+                        title: 'Cancel',
+                        isFilled: false,
+                        onTap: () {
+                          Modular.to.pop();
+                        },
+                      ),
+                    ),
+                  ]
+                : [
+                    WAppButton(
+                      title: mainActionTitle,
+                      onTap: onMainAction,
+                    ),
+                  ],
+          ),
+          20.verticalSpace,
         ],
       ),
     );
