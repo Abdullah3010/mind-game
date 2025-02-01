@@ -1,5 +1,6 @@
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/extension/build_context.dart';
@@ -13,6 +14,7 @@ class WSharedScaffold extends StatefulWidget {
     this.bottomSheet,
     this.withSafeArea = true,
     this.isLoading = false,
+    this.withBackground = false,
     this.withNavBar = false,
     super.key,
   });
@@ -22,6 +24,7 @@ class WSharedScaffold extends StatefulWidget {
   final bool? resizeToAvoidBottomInset;
   final bool? isLoading;
   final bool? withNavBar;
+  final bool? withBackground;
   final Widget? appBar;
   final Widget? bottomSheet;
 
@@ -71,7 +74,19 @@ class _WSharedScaffoldState extends State<WSharedScaffold> {
               bottom: widget.withSafeArea,
               right: widget.withSafeArea,
               left: widget.withSafeArea,
-              child: widget.body,
+              child: Stack(
+                children: [
+                  if (widget.withBackground ?? false)
+                    Positioned(
+                      bottom: 88.h,
+                      child: SvgPicture.asset(
+                        Assets.icons.scaffoldBg.path,
+                        width: context.width,
+                      ),
+                    ),
+                  widget.body,
+                ],
+              ),
             ),
           ),
           bottomSheet: widget.bottomSheet,

@@ -37,7 +37,7 @@ class PhoneNumberFormatter extends TextInputFormatter {
       if (newStrignList.length > 16) {
         newStrignList.removeLast();
       }
-    } else if (countryCode == '+971') {
+    } else if (countryCode == '+971' || countryCode == '+974') {
       if (newStrignList.length > 4) {
         newStrignList.insert(4, ' ');
       }

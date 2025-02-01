@@ -146,6 +146,10 @@ class $AssetsIconsGen {
   SvgGenImage get pngtreeCelebrationEmojiPngImage88914271 => const SvgGenImage(
       'assets/icons/pngtree-celebration-emoji-png-image_8891427 1.svg');
 
+  /// File path: assets/icons/scaffold_bg.svg
+  SvgGenImage get scaffoldBg =>
+      const SvgGenImage('assets/icons/scaffold_bg.svg');
+
   /// File path: assets/icons/solar_cup-star-bold.svg
   SvgGenImage get solarCupStarBold =>
       const SvgGenImage('assets/icons/solar_cup-star-bold.svg');
@@ -190,6 +194,7 @@ class $AssetsIconsGen {
         nrkCategoryActive,
         passwordIcon,
         pngtreeCelebrationEmojiPngImage88914271,
+        scaffoldBg,
         solarCupStarBold
       ];
 }

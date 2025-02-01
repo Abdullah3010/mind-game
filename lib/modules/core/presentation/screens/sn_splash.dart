@@ -78,4 +78,10 @@ class _SNSplashState extends State<SNSplash> with SingleTickerProviderStateMixin
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }

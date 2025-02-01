@@ -4,17 +4,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/extension/build_context.dart';
+import 'package:mind_game/core/extension/color_extension.dart';
+import 'package:mind_game/core/extension/num_ext.dart';
 import 'package:mind_game/core/extension/text_theme_extension.dart';
 
 class WSharedAppBar extends StatelessWidget {
   const WSharedAppBar({
     super.key,
-    this.leading,
     this.title,
-    this.withBack = false,
+    this.withBack = true,
   });
 
-  final Widget? leading;
   final String? title;
   final bool withBack;
   @override
@@ -28,18 +28,24 @@ class WSharedAppBar extends StatelessWidget {
             },
             child: SvgPicture.asset(
               Assets.icons.iconLeft.path,
+              colorFilter: ColorFilter.mode(
+                context.theme.colorScheme.white,
+                BlendMode.srcIn,
+              ),
             ),
           ),
           8.horizontalSpace,
         ],
-        if (leading != null)
-          leading ?? Container()
-        else if (leading == null && title != null)
-          Text(
-            title ?? '',
-            style: context.textTheme.white25w800,
+        Expanded(
+          child: Center(
+            child: Text(
+              title ?? '',
+              style: context.textTheme.white14w700,
+              textAlign: TextAlign.center,
+            ),
           ),
-        const Spacer(),
+        ),
+        40.widthBox,
       ],
     );
   }

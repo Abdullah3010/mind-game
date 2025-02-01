@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mind_game/core/assets/assets.gen.dart';
 import 'package:mind_game/core/config/models/m_country_code.dart';
 import 'package:mind_game/core/config/params/params_custom_input.dart';
 import 'package:mind_game/core/constants/constants.dart';
@@ -9,6 +10,7 @@ import 'package:mind_game/core/extension/text_theme_extension.dart';
 import 'package:mind_game/core/utils/input_field_validator.dart';
 import 'package:mind_game/core/utils/input_formatters/phone_number_formatter.dart';
 import 'package:mind_game/core/widgets/forms/base_form_field.dart';
+import 'package:mind_game/core/widgets/forms/w_input_prefix_icon.dart';
 import 'package:mind_game/core/widgets/forms/w_shared_field.dart';
 
 class WPhoneField extends BaseFormField {
@@ -22,11 +24,10 @@ class WPhoneField extends BaseFormField {
 
   @override
   Widget buildField(BuildContext context, {ParamsCustomInput? param}) {
-    MCountryCode currentCountry = Constants.countries.firstOrNull ??
-        MCountryCode(
-          name: 'DE',
-          code: '+49',
-        );
+    MCountryCode currentCountry = MCountryCode(
+      name: 'DE',
+      code: '+974',
+    );
     return StatefulBuilder(
       builder: (context, setState) {
         return WSharedField(
@@ -44,14 +45,17 @@ class WPhoneField extends BaseFormField {
           textInputAction: textInputAction,
           onChanged: param?.onChanged,
           textDirection: TextDirection.ltr,
-          prefixIcon: CInputCountryCodePrefix(
-            onCountrySelected: (country) {
-              setState(() {
-                currentCountry = country;
-                controller.text = country.code;
-              });
-            },
+          prefixIcon: WInputPrefixIcon(
+            icon: Assets.icons.group599.path,
           ),
+          // CInputCountryCodePrefix(
+          //     onCountrySelected: (country) {
+          //       setState(() {
+          //         currentCountry = country;
+          //         controller.text = country.code;
+          //       });
+          //     },
+          //   ),
         );
       },
     );
@@ -157,7 +161,7 @@ class _CInputCountryCodePrefixState extends State<CInputCountryCodePrefix> {
         ),
         child: Text(
           country.name,
-          style: Theme.of(context).textTheme.white25w800,
+          style: Theme.of(context).textTheme.grey14w500,
         ),
       ),
     );
@@ -181,7 +185,7 @@ class _CInputCountryCodePrefixState extends State<CInputCountryCodePrefix> {
                 width: 35.w,
                 child: Text(
                   currentCountryPrefix,
-                  style: context.textTheme.white25w800,
+                  style: context.textTheme.grey14w500,
                 ),
               ),
               Icon(
@@ -194,6 +198,7 @@ class _CInputCountryCodePrefixState extends State<CInputCountryCodePrefix> {
                 width: 20.w,
                 thickness: 1.5.w,
                 indent: 10.h,
+                endIndent: 10.h,
               ),
             ],
           ),

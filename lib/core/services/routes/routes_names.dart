@@ -18,6 +18,8 @@ class AuthRoutes {
 
   String get login => '${baseUrl}login';
   String get register => '${baseUrl}register';
+  String get forgetPassword => '${baseUrl}forget-password';
+  String get changePassword => '${baseUrl}change-password';
 }
 
 class HomeRoutes {

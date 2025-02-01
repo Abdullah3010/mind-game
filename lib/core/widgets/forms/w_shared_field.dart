@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WSharedField extends StatelessWidget {
   const WSharedField({
@@ -82,6 +83,7 @@ class WSharedField extends StatelessWidget {
       onFieldSubmitted: onFieldSubmitted,
       obscureText: obscureText ?? false,
       enabled: enabled,
+      cursorHeight: 15.h,
       decoration: InputDecoration(
         hintText: hint,
         labelText: label,
