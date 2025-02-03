@@ -69,6 +69,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/Icon - Left.svg
   SvgGenImage get iconLeft => const SvgGenImage('assets/icons/Icon - Left.svg');
 
+  /// File path: assets/icons/Icon - Profile (2).svg
+  SvgGenImage get iconProfile2 =>
+      const SvgGenImage('assets/icons/Icon - Profile (2).svg');
+
   /// File path: assets/icons/Icon - Profile-1.svg
   SvgGenImage get iconProfile1 =>
       const SvgGenImage('assets/icons/Icon - Profile-1.svg');
@@ -105,6 +109,10 @@ class $AssetsIconsGen {
   SvgGenImage get cuidaNotificationBellTimerOutline => const SvgGenImage(
       'assets/icons/cuida_notification-bell-timer-outline.svg');
 
+  /// File path: assets/icons/delete-outline.svg
+  SvgGenImage get deleteOutline =>
+      const SvgGenImage('assets/icons/delete-outline.svg');
+
   /// File path: assets/icons/email icon.svg
   SvgGenImage get emailIcon => const SvgGenImage('assets/icons/email icon.svg');
 
@@ -126,10 +134,6 @@ class $AssetsIconsGen {
   SvgGenImage get icRoundPlus =>
       const SvgGenImage('assets/icons/ic_round-plus.svg');
 
-  /// File path: assets/icons/material-symbols_pause-rounded.svg
-  SvgGenImage get materialSymbolsPauseRounded =>
-      const SvgGenImage('assets/icons/material-symbols_pause-rounded.svg');
-
   /// File path: assets/icons/mingcute_exit-line.svg
   SvgGenImage get mingcuteExitLine =>
       const SvgGenImage('assets/icons/mingcute_exit-line.svg');
@@ -144,6 +148,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/password icon.svg
   SvgGenImage get passwordIcon =>
       const SvgGenImage('assets/icons/password icon.svg');
+
+  /// File path: assets/icons/pause-rounded.svg
+  SvgGenImage get pauseRounded =>
+      const SvgGenImage('assets/icons/pause-rounded.svg');
 
   /// File path: assets/icons/pngtree-celebration-emoji-png-image_8891427 1.svg
   SvgGenImage get pngtreeCelebrationEmojiPngImage88914271 => const SvgGenImage(
@@ -180,6 +188,7 @@ class $AssetsIconsGen {
         group600,
         group,
         iconLeft,
+        iconProfile2,
         iconProfile1,
         iconProfile,
         illustration,
@@ -190,17 +199,18 @@ class $AssetsIconsGen {
         vector,
         cele1,
         cuidaNotificationBellTimerOutline,
+        deleteOutline,
         emailIcon,
         emojioneV1RacingCar,
         eyeIcon,
         fluentEmojiFlatWatch,
         home1,
         icRoundPlus,
-        materialSymbolsPauseRounded,
         mingcuteExitLine,
         notoBooks,
         nrkCategoryActive,
         passwordIcon,
+        pauseRounded,
         pngtreeCelebrationEmojiPngImage88914271,
         scaffoldBg,
         solarCupStarBold,

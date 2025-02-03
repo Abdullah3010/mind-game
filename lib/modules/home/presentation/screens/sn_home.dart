@@ -44,41 +44,42 @@ class _SNHomeState extends State<SNHome> {
               children: [
                 Expanded(
                   child: Center(
-                      child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.icons.iconProfile1.path,
-                            width: 32.w,
-                            height: 32.h,
-                          ),
-                          10.widthBox,
-                          Text(
-                            'عبد الرحمن محمد',
-                            style: context.textTheme.white14w700,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          SvgPicture.asset(
-                            Assets.icons.bg.path,
-                            width: 29.w,
-                            height: 29.h,
-                          ),
-                          10.widthBox,
-                          Text(
-                            'مبتدئ',
-                            style: context.textTheme.white14w700,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    ],
-                  )),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.icons.iconProfile1.path,
+                              width: 32.w,
+                              height: 32.h,
+                            ),
+                            10.widthBox,
+                            Text(
+                              'عبد الرحمن محمد',
+                              style: context.textTheme.white14w700,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            SvgPicture.asset(
+                              Assets.icons.bg.path,
+                              width: 29.w,
+                              height: 29.h,
+                            ),
+                            10.widthBox,
+                            Text(
+                              'مبتدئ',
+                              style: context.textTheme.white14w700,
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 Container(
                   alignment: Alignment.bottomCenter,

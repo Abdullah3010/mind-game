@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mind_game/core/extension/build_context.dart';
 import 'package:mind_game/core/extension/color_extension.dart';
+import 'package:mind_game/core/extension/num_ext.dart';
 import 'package:mind_game/core/extension/text_theme_extension.dart';
 
 class WAppButton extends StatefulWidget {
@@ -17,7 +18,9 @@ class WAppButton extends StatefulWidget {
     this.style,
     this.padding,
     this.radius,
+    this.color,
     this.borderColor,
+    this.icon,
     this.textDirection,
   });
 
@@ -30,7 +33,9 @@ class WAppButton extends StatefulWidget {
   final double? radius;
   final TextStyle? style;
   final EdgeInsetsGeometry? padding;
+  final Color? color;
   final Color? borderColor;
+  final Widget? icon;
   final TextDirection? textDirection;
 
   @override
@@ -54,11 +59,12 @@ class _WAppButtonState extends State<WAppButton> {
             ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(widget.radius ?? 36.r),
-          color: widget.isFilled
-              ? (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.grey)
-              : (!(widget.isDisabled)
-                  ? context.theme.colorScheme.white
-                  : context.theme.colorScheme.grey.withValues(alpha: 0.7)),
+          color: widget.color ??
+              (widget.isFilled
+                  ? (!(widget.isDisabled) ? context.theme.colorScheme.buttonColor : context.theme.colorScheme.grey)
+                  : (!(widget.isDisabled)
+                      ? context.theme.colorScheme.white
+                      : context.theme.colorScheme.grey.withValues(alpha: 0.7))),
           border: !widget.isFilled
               ? Border.all(
                   color: widget.borderColor ??
@@ -75,19 +81,26 @@ class _WAppButtonState extends State<WAppButton> {
             : Center(
                 child: Directionality(
                   textDirection: widget.textDirection ?? TextDirection.ltr,
-                  child: Text(
-                    widget.title,
-                    textAlign: TextAlign.center,
-                    style: widget.style ??
-                        context.textTheme.button.copyWith(
-                          color: widget.isFilled
-                              ? (!(widget.isDisabled)
-                                  ? context.theme.colorScheme.white
-                                  : context.theme.colorScheme.lightGery)
-                              : (!(widget.isDisabled)
-                                  ? context.theme.colorScheme.buttonColor
-                                  : context.theme.colorScheme.lightGery),
-                        ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (widget.icon != null) widget.icon!,
+                      if (widget.icon != null) 10.widthBox,
+                      Text(
+                        widget.title,
+                        textAlign: TextAlign.center,
+                        style: widget.style ??
+                            context.textTheme.button.copyWith(
+                              color: widget.isFilled
+                                  ? (!(widget.isDisabled)
+                                      ? context.theme.colorScheme.white
+                                      : context.theme.colorScheme.lightGery)
+                                  : (!(widget.isDisabled)
+                                      ? context.theme.colorScheme.buttonColor
+                                      : context.theme.colorScheme.lightGery),
+                            ),
+                      ),
+                    ],
                   ),
                 ),
               ),
