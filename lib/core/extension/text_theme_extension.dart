@@ -16,6 +16,11 @@ extension TextStyleExtension on TextTheme {
         color: const Color(0xFF939598),
         height: 1.8,
       );
+  TextStyle get grey16w500 => TextStyle(
+        fontWeight: FontWeight.w500,
+        fontSize: 16.sp,
+        color: const Color(0xFF939598),
+      );
 
   /// [Blue]
   TextStyle get blue18w700 => TextStyle(
@@ -64,6 +69,11 @@ extension TextStyleExtension on TextTheme {
 
   TextStyle get white16w500 => TextStyle(
         fontWeight: FontWeight.w500,
+        fontSize: 16.sp,
+        color: const Color(0xffffffff),
+      );
+  TextStyle get white16w400 => TextStyle(
+        fontWeight: FontWeight.w400,
         fontSize: 16.sp,
         color: const Color(0xffffffff),
       );
