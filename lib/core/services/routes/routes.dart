@@ -18,7 +18,7 @@ class Routes {
     r.child(
       RoutesNames.core.splash,
       transition: TransitionType.fadeIn,
-      child: (_) => const SNProfile(),
+      child: (_) => const SNSplash(),
     );
 
     r.child(
