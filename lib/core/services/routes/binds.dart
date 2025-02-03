@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mind_game/modules/auth/managers/mg_auth.dart';
+import 'package:mind_game/modules/game/managers/mg_game.dart';
 import 'package:mind_game/modules/home/managers/mg_home.dart';
 import 'package:mind_game/modules/profile/managers/mg_profile.dart';
 
@@ -15,5 +16,8 @@ class Binds {
 
     /// ================= Profile ================= ///
     i.addLazySingleton(MgProfile.new);
+
+    /// ================= Core ================= ///
+    i.addLazySingleton(MgGame.new);
   }
 }

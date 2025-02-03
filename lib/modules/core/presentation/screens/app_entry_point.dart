@@ -6,6 +6,7 @@ import 'package:mind_game/core/constants/constants.dart';
 import 'package:mind_game/core/services/routes/app_module.dart';
 import 'package:mind_game/core/theme/app_themes.dart';
 import 'package:mind_game/modules/auth/managers/mg_auth.dart';
+import 'package:mind_game/modules/game/managers/mg_game.dart';
 import 'package:mind_game/modules/home/managers/mg_home.dart';
 import 'package:mind_game/modules/profile/managers/mg_profile.dart';
 import 'package:toastification/toastification.dart';
@@ -33,6 +34,7 @@ class _AppEntryPointState extends State<AppEntryPoint> with WidgetsBindingObserv
         ChangeNotifierProvider(create: (_) => Modular.get<MgAuth>()),
         ChangeNotifierProvider(create: (_) => Modular.get<MgHome>()),
         ChangeNotifierProvider(create: (_) => Modular.get<MgProfile>()),
+        ChangeNotifierProvider(create: (_) => Modular.get<MgGame>()),
       ],
       child: ScreenUtilInit(
         designSize: const Size(375, 812),

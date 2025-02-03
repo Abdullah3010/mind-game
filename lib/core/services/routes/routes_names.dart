@@ -5,6 +5,7 @@ class RoutesNames {
   static AuthRoutes auth = AuthRoutes();
   static HomeRoutes home = HomeRoutes();
   static ProfileRoutes profile = ProfileRoutes();
+  static GameRoutes game = GameRoutes();
 }
 
 class CoreRoutes {
@@ -36,4 +37,8 @@ class ProfileRoutes {
   String get profileMain => '${baseUrl}profile';
   String get editProfile => '${baseUrl}edit-profile';
   String get changePassword => '${baseUrl}change-password';
+}
+
+class GameRoutes {
+  static String get baseUrl => RoutesNames.baseUrl;
 }
